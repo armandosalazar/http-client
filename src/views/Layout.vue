@@ -3,3 +3,7 @@
         <router-view />
     </main>
 </template>
+
+<style>
+@import "tailwindcss";
+</style>
