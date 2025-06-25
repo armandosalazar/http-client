@@ -23,7 +23,7 @@
     // My custom settings
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["src/*"],
     },
   },
   "include": ["src"],
