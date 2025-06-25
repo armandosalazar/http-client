@@ -1,14 +1,14 @@
 import { createApp } from "vue";
 import naive from "naive-ui";
-import Layout from "@/views/Layout.vue";
+import layout from "@/views/layout.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
     path: "/",
-    component: Layout,
+    component: layout,
     children: [
-      { path: "/", component: () => import("@/views/home/Home.vue") },
+      { path: "/", component: () => import("@/views/home/home.vue") },
     ]
   }
 ];
@@ -18,7 +18,7 @@ const router = createRouter({
   routes,
 });
 
-const app = createApp(Layout);
+const app = createApp(layout);
 app.use(naive);
 app.use(router);
 app.mount("#app");
