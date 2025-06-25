@@ -1,6 +1,7 @@
 import { createApp } from "vue";
-// import App from "./App.vue";
-import Layout from "./views/layout.vue";
+import naive from "naive-ui";
+import Layout from "./views/Layout.vue";
+
 const router = [
   {
     path: "/",
@@ -8,4 +9,6 @@ const router = [
   }
 ];
 
-createApp(Layout).use(router).mount("#app");
+const app = createApp(Layout);
+app.use(naive);
+app.mount("#app");
