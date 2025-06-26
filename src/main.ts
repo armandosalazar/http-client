@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import naive from "naive-ui";
 import layout from "@/views/layout.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import "@/index.css"
 
 const routes = [
   {

@@ -4,6 +4,6 @@
     </main>
 </template>
 
-<style>
+<!-- <style>
 @import "tailwindcss";
-</style>
+</style> -->
