@@ -1,6 +1,18 @@
 <script setup lang="ts">
-function sendRequest() {
-  console.log('Sending request...');
+import { invoke } from '@tauri-apps/api/core';
+const methods = [
+  { label: 'GET', value: 'get' },
+  { label: 'POST', value: 'post' },
+  { label: 'PUT', value: 'put' },
+  { label: 'DELETE', value: 'delete' },
+];
+
+async function sendRequest() {
+  const result = await invoke('send_http_request', {
+    method: 'GET', // Replace with selected method
+    url: 'https://example.com', // Replace with input URL
+  });
+  console.log('Request sent!', result);
 }
 </script>
 
@@ -11,7 +23,7 @@ function sendRequest() {
     </h1>
     <div>
       <form @submit.prevent="sendRequest" class="flex gap-2">
-        <n-select class="flex-1" />
+        <n-select class="flex-1" :options="methods" />
         <n-input placeholder="Enter URL" class="flex-1/2" />
       </form>
     </div>
