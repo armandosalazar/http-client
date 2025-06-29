@@ -1,20 +1,28 @@
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function HomeView() {
 
-  return <section className="container mx-auto p-4">
-    <article className="flex">
+  return <section className="p-4">
+    <article className="flex gap-2">
       <Select>
-        <SelectTrigger className="w-[180px]">
-          <SelectValue placeholder="Options" />
+        <SelectTrigger className="w-fit">
+          <SelectValue placeholder="Options" defaultValue="GET" />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="option1">Option 1</SelectItem>
-          <SelectItem value="option2">Option 2</SelectItem>
+          <SelectItem value="GET">
+            GET
+          </SelectItem>
+          <SelectItem value="POST">
+            POST
+          </SelectItem>
         </SelectContent>
       </Select>
-    <Input />
+      <Input />
+      <Button>
+        Send
+      </Button>
     </article>
   </section>;
 }
