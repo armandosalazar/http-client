@@ -1,6 +1,6 @@
 export default function HomeView() {
 
   return <>
-  <h1>Hola mundo</h1>
+    <h1 className="">Hola mundo</h1>
   </>
 }
