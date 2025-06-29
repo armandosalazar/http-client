@@ -5,11 +5,16 @@ fn greet(name: &str) -> String {
 }
 
 #[tauri::command]
-fn send_http_request(method: &str, url: &str) -> String {
-    // This is a placeholder for the actual HTTP request logic.
-    // You would typically use an HTTP client library here.
-    println!("Sending HTTP request to: {} with method: {}", url, method);
-    format!("HTTP request sent to: {} with method: {}", url, method)
+async fn send_http_request(method: &str, url: &str) -> Result<String, String> {
+    match method {
+        "GET" => {
+            // Implement GET request logic here
+            let res = reqwest::get(url).await.map_err(|e| e.to_string())?;
+            print!("Response: {:?}", res);
+            Ok(format!("GET request sent to {}", url))
+        }
+        _ => Err(format!("Unsupported HTTP method: {}", method)),
+    }
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
